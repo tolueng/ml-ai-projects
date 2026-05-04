@@ -1,0 +1,347 @@
+# ============================================================
+# .gitignore for My ML / AI / Python Projects
+# ============================================================
+#
+# Hi! This file explains which files and folders I do NOT upload to this GitHub repository.
+#
+# Some files are useful for readers, recruiters, and collaborators.
+# Other files are only useful on my own computer, or they may be too large, private, temporary, or automatically generated.
+#
+# This file helps keep the repository clean, safe, and easy to understand.
+#
+# Example:
+# .env
+#
+# This means I do not upload a file named .env.
+#
+# Example:
+# *.pyc
+#
+# The * means "any file name".
+# So *.pyc means I do not upload any file ending with .pyc.
+#
+# Example:
+# venv/
+#
+# The / means it is a folder.
+# So venv/ means I do not upload the venv folder.
+# ============================================================
+
+
+# ============================================================
+# 1. Python temporary/cache files
+# ============================================================
+#
+# When I run Python code, Python may automatically create temporary
+# files and folders.
+#
+# These files help Python run faster on my computer, but they are not
+# my actual project code.
+#
+# I do not upload them because:
+# - they are created automatically
+# - they are not useful for readers
+# - they can make the repository look messy
+#
+# My real Python files are the .py files that I write myself.
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+# ============================================================
+# 2. Python virtual environments
+# ============================================================
+#
+# I use virtual environments to install the packages needed for my projects.
+#
+# A virtual environment may contain packages like:
+# - pandas
+# - numpy
+# - scikit-learn
+# - matplotlib
+# - tensorflow
+# - torch
+#
+# These folders can become very large, so I do not upload them.
+#
+# Instead, I upload requirements.txt when possible.
+# That file shows which packages are needed.
+#
+# Someone else can install the packages by running:
+#
+# pip install -r requirements.txt
+#
+# This is cleaner than uploading my whole virtual environment.
+
+venv/
+.venv/
+env/
+
+
+# ============================================================
+# 3. Jupyter Notebook checkpoint files
+# ============================================================
+#
+# Many of my ML/AI projects may use Jupyter Notebooks.
+#
+# Jupyter can automatically create backup folders called:
+# .ipynb_checkpoints/
+#
+# I do not upload these checkpoint folders because they are automatic
+# backup files, not the main notebook.
+#
+# The notebook I want people to read is usually something like:
+#
+# notebook.ipynb
+#
+# or:
+#
+# analysis.ipynb
+
+.ipynb_checkpoints/
+
+
+# ============================================================
+# 4. Secret files: passwords, API keys, and private tokens
+# ============================================================
+#
+# Some projects may use private keys or passwords.
+#
+# For example, a .env file could contain:
+#
+# OPENAI_API_KEY=my_private_key
+# DATABASE_PASSWORD=my_password
+# SECRET_KEY=my_secret
+#
+# I do not upload these files because they may contain private information.
+#
+# This protects:
+# - my API keys
+# - passwords
+# - database credentials
+# - private tokens
+#
+# Important:
+# Public GitHub repositories should never contain secret keys.
+
+.env
+.env.local
+.env.*
+
+
+# ============================================================
+# 5. Raw or private datasets
+# ============================================================
+#
+# In ML/AI projects, datasets are often stored in a data/ folder.
+#
+# I may have folders like:
+#
+# data/raw/
+# data/private/
+#
+# I do not upload these folders because raw datasets can be:
+# - very large
+# - private
+# - copyrighted
+# - messy
+# - not necessary for understanding the project
+#
+# Instead, I may upload:
+# - a small sample dataset
+# - cleaned example data
+# - a link to the original dataset
+# - instructions in the README
+#
+# For example, I may upload:
+#
+# data/sample_data.csv
+#
+# But I usually avoid uploading full raw datasets.
+
+data/raw/
+data/private/
+
+
+# ============================================================
+# 6. Large machine learning model files
+# ============================================================
+#
+# Some ML/AI projects create saved model files after training.
+#
+# Examples:
+#
+# model.pkl
+# model.joblib
+# neural_network.h5
+# pytorch_model.pt
+# model.pth
+# model.onnx
+#
+# These files can become large, especially for deep learning projects.
+#
+# I usually do not upload large model files directly to GitHub because
+# GitHub is mainly for code, documentation, and project structure.
+#
+# Instead, I try to upload:
+# - the training code
+# - the prediction code
+# - the evaluation results
+# - screenshots or charts
+# - instructions for reproducing the model
+#
+# If a model file is small and important for a demo, I may choose to
+# upload it manually by removing that specific rule.
+
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+*.onnx
+
+
+# ============================================================
+# 7. Log files
+# ============================================================
+#
+# Some programs create log files while running.
+#
+# Examples:
+#
+# training.log
+# app.log
+# error.log
+#
+# Logs can be useful on my computer while debugging, but I usually
+# do not upload them because:
+# - they can be temporary
+# - they can become long
+# - they may contain private paths or information
+#
+# If I want to show important training results, I will usually put them
+# in the README or in the results/ folder instead.
+
+*.log
+logs/
+
+
+# ============================================================
+# 8. Operating system files
+# ============================================================
+#
+# My computer may automatically create hidden system files.
+#
+# For example:
+#
+# .DS_Store  -> created by macOS
+# Thumbs.db  -> created by Windows
+#
+# These files are not part of my ML/AI projects.
+# They only store local folder display information on my computer.
+#
+# I do not upload them because they are unnecessary for readers.
+
+.DS_Store
+Thumbs.db
+
+
+# ============================================================
+# 9. Code editor settings
+# ============================================================
+#
+# Code editors may create folders for personal settings.
+#
+# Examples:
+#
+# .vscode/  -> Visual Studio Code settings
+# .idea/    -> PyCharm or IntelliJ settings
+#
+# I usually do not upload these because they may contain settings that
+# are only useful for my own computer.
+#
+# The project should be understandable without my personal editor setup.
+
+.vscode/
+.idea/
+
+
+# ============================================================
+# 10. Experiment output folders
+# ============================================================
+#
+# ML/AI experiments can create many automatic output folders.
+#
+# Examples:
+#
+# outputs/
+# runs/
+# checkpoints/
+#
+# These folders may contain:
+# - temporary experiment outputs
+# - model checkpoints
+# - generated files
+# - repeated training runs
+#
+# I do not upload them by default because they can become large and messy.
+#
+# Important:
+# I may still upload selected result files that help explain the project,
+# such as:
+#
+# results/confusion_matrix.png
+# results/accuracy_chart.png
+# results/sample_predictions.png
+#
+# The goal is to show useful results, not every temporary experiment file.
+
+outputs/
+runs/
+checkpoints/
+
+
+# ============================================================
+# 11. Temporary backup files
+# ============================================================
+#
+# Sometimes programs or editors create temporary backup files.
+#
+# Examples:
+#
+# file.tmp
+# file.temp
+# old_version.bak
+#
+# I do not upload these because they are not part of the final project.
+
+*.tmp
+*.temp
+*.bak
+
+
+# ============================================================
+# 12. Files I usually WANT to upload
+# ============================================================
+#
+# I normally want these files to appear in the repository:
+#
+# README.md
+# requirements.txt
+# notebook.ipynb
+# src/
+# results/
+# data/sample_data.csv
+#
+# These files help people understand:
+# - what the project does
+# - how to install the requirements
+# - how the model works
+# - what results I achieved
+# - how to run the project
+#
+# So I do NOT add those files to .gitignore.
+# ============================================================
